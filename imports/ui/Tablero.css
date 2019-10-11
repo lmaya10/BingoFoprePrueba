@@ -1,0 +1,42 @@
+
+.numberCircle {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 2%;
+    margin: 1%;
+
+    border: 2px solid #000000;
+    color: #000000;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+
+    font: 32px Arial, sans-serif;
+}
+
+.tf{
+	background-color: #E8B410;
+}
+
+.to{
+	background-color: #027CBD;
+}
+
+.tp{
+	background-color: #6DA53A;
+}
+
+.tr{
+	background-color: #CB7619;
+}
+
+.te{
+	background-color: #C10021;
+}
+
+.tablero{
+    padding: 2%;
+    margin: 10%;
+
+}
