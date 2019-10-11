@@ -1,30 +1,22 @@
-import React from 'react';
-import Tablero from './Tablero.jsx'
+import React, {useState} from 'react';
 import Encabezado from './Encabezado.jsx'
+import Juego from './Juego.jsx';
 
 const App = () => {
 
-	let num = [];
+	const [estadoJuego,	 setEstadoJuego] = useState(0);
 
-	for(let i = 0; i < 80; i++)
-	{
-		num.push({
-			numero: i + 1
-		}); 
+	const comenzarEvento = evt => {
+		setEstadoJuego(1);
 	}
-
-	console.log(num);
-
 	return (
 		<div>
 			<Encabezado/>
-			<div className ="container-fluid">
-			<div className = "row">
-				<div className = "col-md-6">
-					<Tablero numeros={num}></Tablero>
-				</div>
-			</div>
-			</div>
+			{ (estadoJuego == 0) ? 		<div>
+			<h1> Bienvenidos al Bingo Fopre Anual </h1>
+			<button onClick = {comenzarEvento}> Comenzar Evento </button>
+		</div> 
+		: <Juego/>}
 		</div>
 		)
 

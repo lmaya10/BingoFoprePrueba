@@ -18,7 +18,7 @@ const Tablero = props => {
 			<br/>
 			<div className = "row">
 				{props.numeros.map((n,i)  => (
-					<Numero valor={i+1} key={i}></Numero>
+					<Numero valor={n.numero} key={i}></Numero>
 					))
 				}
 
