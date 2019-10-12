@@ -5,7 +5,7 @@ import "./Encabezado.css"
 const Encabezado = props => {
 	
 	return (
-		<div className = "row"> 	
+		<div className = "imgPrincipal"> 	
 			<img className= "imgFopre"src="https://raw.githubusercontent.com/lmaya10/BingoFopre/master/images/Fopre.jpg" alt="Imgen icono fopre"/>
 		</div>
 	)

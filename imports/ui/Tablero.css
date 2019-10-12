@@ -1,10 +1,9 @@
 
-.numberCircle {
+.letterCircle {
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 4%;
+    height: 10%;
     padding: 2%;
-    margin: 1%;
 
     border: 2px solid #000000;
     color: #000000;
@@ -12,7 +11,7 @@
     display: inline-block;
     cursor: pointer;
 
-    font: 32px Arial, sans-serif;
+    font: 16vm Arial, sans-serif;
 }
 
 .tf{
@@ -33,10 +32,4 @@
 
 .te{
 	background-color: #C10021;
-}
-
-.tablero{
-    padding: 2%;
-    margin: 10%;
-
 }

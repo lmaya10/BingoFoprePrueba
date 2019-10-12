@@ -1,11 +1,10 @@
 
-
 .numberCircle {
     border-radius: 50%;
-    width: 120vm;
-    height: 120vm;
+    width: 4%;
+    height: 10%;
     padding: 2%;
-    margin: 10%;
+    margin: 0.5%;
 
     border: 2px solid #000000;
     color: #000000;
@@ -13,12 +12,14 @@
     display: inline-block;
     cursor: pointer;
 
-    font: 32px Arial, sans-serif;
+    font: 100% Arial, sans-serif;
 }
+
+.btnApagado{
+    background-color: #fff;
+}
+
 
 .btnPrendido{
     background-color: red;
-}
-.btnApagado{
-    background-color: #fff;
 }

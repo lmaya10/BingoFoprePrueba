@@ -1,46 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Tablero from './Tablero.jsx';
 import Carton from './Carton.jsx';
+import PropTypes from 'prop-types';
+import "./Juego.css";
 
-const Juego = () => {
-
-	let numTab = [];
-
-	for(let i = 0; i < 15; i++)
-	{
-		numTab.push({
-			numero: i + 1
-		}); 
-		numTab.push({
-			numero: i + 16
-		}); 
-		numTab.push({
-			numero: i + 31
-		}); 
-		numTab.push({
-			numero: i + 46
-		}); 
-		numTab.push({
-			numero: i + 61
-		}); 
-	}
-
-	console.log(numTab);
+const Juego = props => {
 
 	return (
 		<div>
-			<div className ="container-fluid">
-			<div className = "row">
-				<div className = "col-md-6">
-					<Tablero numeros={numTab}></Tablero>
+			<div className ="container-fluid contenedor">
+				<div className = "row tableroPrincipal">
+					<Tablero nF={props.numF} nO={props.numO} nP={props.numP} nR={props.numR} nE={props.numE}></Tablero>
+					
 				</div>
-				<div className = "col-md-6">
+				<div className ="row">
 					<Carton/>
-				</div>
-			</div>
+				</div>			
 			</div>
 		</div>
 		)
+
+};
+
+Juego.propTypes = {
+	numF : PropTypes.arrayOf(PropTypes.object).isRequired,
+	numO : PropTypes.arrayOf(PropTypes.object).isRequired,
+	numP : PropTypes.arrayOf(PropTypes.object).isRequired,
+	numR : PropTypes.arrayOf(PropTypes.object).isRequired,
+	numE : PropTypes.arrayOf(PropTypes.object).isRequired
 
 };
 

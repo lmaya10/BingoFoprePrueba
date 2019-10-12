@@ -7,28 +7,60 @@ import "./Tablero.css";
 const Tablero = props => {
 
 	return (
-		<div className = "tablero"> 	
+		<div className = "tablero col-md-12"> 
+			<h1> Tablero Actual </h1>	
 			<div className = "row">
-				<div className = "col-md-2 offset-md-1 tf numberCircle"> F </div>
-				<div className = "col-md-2 to numberCircle"> O </div>
-				<div className = "col-md-2 tp numberCircle"> P </div>
-				<div className = "col-md-2 tr numberCircle"> R </div>
-				<div className = "col-md-2 te numberCircle"> E </div>		
+				<div className = "col-md-12">		
+					<div className = "tf letterCircle"> F </div>
+							{props.nF.map((n,i) => (
+							<Numero valor={n.numero} estado={n.estado} id={n._id} key={i}></Numero>
+						))}
+					
+				</div>
+			</div>
+			<div className = "row">
+				<div className = "col-md-12">
+					<div className = "to letterCircle"> O </div>
+					{props.nO.map((n,i) => (
+						<Numero valor={n.numero} estado={n.estado} id={n._id} key={i}></Numero>
+					))}
+				</div>
+			</div>
+			<div className = "row">
+				<div className = "col-md-12">
+					<div className = "tp letterCircle"> P </div>
+					{props.nP.map((n,i) => (
+						<Numero valor={n.numero} estado={n.estado} id={n._id} key={i}></Numero>
+					))}
+				</div>
+			</div>
+			<div className = "row">
+				<div className = "col-md-12">
+					<div className = "tr letterCircle"> R </div>
+					{props.nR.map((n,i) => (
+						<Numero valor={n.numero} estado={n.estado} id={n._id} key={i}></Numero>
+					))}
+				</div>
+			</div>
+			<div className = "row">
+				<div className = "col-md-12">
+					<div className = "te letterCircle"> E </div>
+					{props.nE.map((n,i) => (
+						<Numero valor={n.numero} estado={n.estado} id={n._id} key={i}></Numero>
+					))}
+				</div>
 			</div>
 			<br/>
-			<div className = "row">
-				{props.numeros.map((n,i)  => (
-					<Numero valor={n.numero} key={i}></Numero>
-					))
-				}
-
-			</div>
 		</div>
 	)
 };
 
 Tablero.propTypes = {
-	numeros : PropTypes.arrayOf(PropTypes.object).isRequired
+	nF : PropTypes.arrayOf(PropTypes.object).isRequired,
+	nO : PropTypes.arrayOf(PropTypes.object).isRequired,
+	nP : PropTypes.arrayOf(PropTypes.object).isRequired,
+	nR : PropTypes.arrayOf(PropTypes.object).isRequired,
+	nE : PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default Tablero;

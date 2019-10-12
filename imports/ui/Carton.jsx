@@ -35,8 +35,6 @@ const Carton = props => {
   		i = Math.floor((Math.random() * (15-n)) + 1);
   		a.push(e[i]);
   		e[i] = e[15-n];
-
-  		console.log(a);
 	}
 
 
@@ -58,7 +56,7 @@ const Carton = props => {
 				}
 
 			</div>
-				<div class="row button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Add Call to Action</a></div>
+				<div className="row button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Add Call to Action</a></div>
 
 		</div>
 	)
