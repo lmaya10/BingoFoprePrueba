@@ -1,9 +1,9 @@
-
-.letterCircle {
+.numberTab{
     border-radius: 50%;
     width: 4%;
     height: 10%;
     padding: 2%;
+    margin: 0.5%;
 
     border: 2px solid #000000;
     color: #000000;
@@ -14,22 +14,11 @@
     font: 100% Arial, sans-serif;
 }
 
-.tf{
-	background-color: #E8B410;
+.btnApagado{
+    background-color: #fff;
 }
 
-.to{
-	background-color: #027CBD;
-}
 
-.tp{
-	background-color: #6DA53A;
-}
-
-.tr{
-	background-color: #CB7619;
-}
-
-.te{
-	background-color: #C10021;
+.btnPrendido{
+    background-color: red;
 }

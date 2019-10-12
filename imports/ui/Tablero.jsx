@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Numero from './Numero.jsx';
+import NumeroTablero from './NumeroTablero.jsx';
 import "./Tablero.css";
 
 
@@ -13,7 +13,7 @@ const Tablero = props => {
 				<div className = "col-md-12">		
 					<div className = "tf letterCircle"> F </div>
 							{props.nF.map((n,i) => (
-							<Numero valor={n.numero} estado={n.estado} id={n._id} key={i}></Numero>
+							<NumeroTablero user= {props.user} valor={n.numero} estado={n.estado} id={n._id} key={i}></NumeroTablero>
 						))}
 					
 				</div>
@@ -22,7 +22,7 @@ const Tablero = props => {
 				<div className = "col-md-12">
 					<div className = "to letterCircle"> O </div>
 					{props.nO.map((n,i) => (
-						<Numero valor={n.numero} estado={n.estado} id={n._id} key={i}></Numero>
+						<NumeroTablero user= {props.user} valor={n.numero} estado={n.estado} id={n._id} key={i}></NumeroTablero>
 					))}
 				</div>
 			</div>
@@ -30,7 +30,7 @@ const Tablero = props => {
 				<div className = "col-md-12">
 					<div className = "tp letterCircle"> P </div>
 					{props.nP.map((n,i) => (
-						<Numero valor={n.numero} estado={n.estado} id={n._id} key={i}></Numero>
+						<NumeroTablero user= {props.user} valor={n.numero} estado={n.estado} id={n._id} key={i}></NumeroTablero>
 					))}
 				</div>
 			</div>
@@ -38,7 +38,7 @@ const Tablero = props => {
 				<div className = "col-md-12">
 					<div className = "tr letterCircle"> R </div>
 					{props.nR.map((n,i) => (
-						<Numero valor={n.numero} estado={n.estado} id={n._id} key={i}></Numero>
+						<NumeroTablero user= {props.user} valor={n.numero} estado={n.estado} id={n._id} key={i}></NumeroTablero>
 					))}
 				</div>
 			</div>
@@ -46,7 +46,7 @@ const Tablero = props => {
 				<div className = "col-md-12">
 					<div className = "te letterCircle"> E </div>
 					{props.nE.map((n,i) => (
-						<Numero valor={n.numero} estado={n.estado} id={n._id} key={i}></Numero>
+						<NumeroTablero user= {props.user} valor={n.numero} estado={n.estado} id={n._id} key={i}></NumeroTablero>
 					))}
 				</div>
 			</div>
@@ -60,7 +60,8 @@ Tablero.propTypes = {
 	nO : PropTypes.arrayOf(PropTypes.object).isRequired,
 	nP : PropTypes.arrayOf(PropTypes.object).isRequired,
 	nR : PropTypes.arrayOf(PropTypes.object).isRequired,
-	nE : PropTypes.arrayOf(PropTypes.object).isRequired
+	nE : PropTypes.arrayOf(PropTypes.object).isRequired,
+	user : PropTypes.object
 };
 
 export default Tablero;

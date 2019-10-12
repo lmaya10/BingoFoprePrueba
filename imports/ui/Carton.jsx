@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Numero from './Numero.jsx';
-import "./Tablero.css";
+import NumeroCarton from './NumeroCarton.jsx';
+import "./Carton.css";
 
 
 const Carton = props => {
@@ -40,26 +40,38 @@ const Carton = props => {
 
 
 	return (
-		<div className = "tablero"> 	
+		(props.user != null && props.user.username != "admin") ? 
+		(
+		<div className = "tablero col-md-4 offset-md-4"> 	
+		<h1> Carton Actual </h1>	
 			<div className = "row">
-				<div className = "col-md-2 offset-md-1 tf numberCircle"> F </div>
-				<div className = "col-md-2 to numberCircle"> O </div>
-				<div className = "col-md-2 tp numberCircle"> P </div>
-				<div className = "col-md-2 tr numberCircle"> R </div>
-				<div className = "col-md-2 te numberCircle"> E </div>		
+				<div className = "col-md-2 offset-md-1 tf letter"> F </div>
+				<div className = "col-md-2 to letter"> O </div>
+				<div className = "col-md-2 tp letter"> P </div>
+				<div className = "col-md-2 tr letter"> R </div>
+				<div className = "col-md-2 te letter"> E </div>		
 			</div>
 			<br/>
 			<div className = "row">
 				{a.map((n,i)  => (
-					<Numero valor={a[i]} key={i}></Numero>
+					<NumeroCarton valor={a[i]} key={i}></NumeroCarton>
 					))
 				}
 
 			</div>
-				<div className="row button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Add Call to Action</a></div>
-
+			<br/><br/>
+			<div className = "row">
+				<button id="btnBingo" className ="col-md-12" onClick ={console.log("Hay Bingo")}>¡BINGO!</button> 
+			</div>
 		</div>
+		): ( <div> Debe iniciar sesion para poder jugar </div>)
+		
 	)
+};
+
+
+Carton.propTypes = {
+	user : PropTypes.object
 };
 
 export default Carton;

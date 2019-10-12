@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import "./Numero.css";
+import "./NumeroTablero.css";
 import { Fs, Os, Ps, Rs, Es } from '../api/tablero.js';
 
 
-const Numero = props => {
+const NumeroTablero = props => {
 
 	const marcarNumero = evt => {
 		console.log(props.id);
@@ -22,16 +22,20 @@ const Numero = props => {
 	}
 	
 	return (
-		<button className ={(props.estado == 1) ? " btnPrendido numberCircle" : " btnApagado numberCircle"} 	
-			 onClick = {marcarNumero}> {props.valor} </button>		
+		(props.user != null && props.user.username == "admin") ? 
+		(<button className ={(props.estado == 1) ? " btnPrendido numberTab" : " btnApagado numberTab"} 	
+			 onClick = {marcarNumero}> {props.valor} </button>) :
+		(<button className ={(props.estado == 1) ? " btnPrendido numberTab" : " btnApagado numberTab"} 	
+			 > {props.valor} </button>)
 		
 	)
 };
 
-Numero.propTypes = {
+NumeroTablero.propTypes = {
 	valor : PropTypes.number.isRequired,
 	estado : PropTypes.number.isRequired,
-	id : PropTypes.object.isRequired
+	id : PropTypes.object.isRequired,
+	user : PropTypes.object
 };
 
-export default Numero;
+export default NumeroTablero;

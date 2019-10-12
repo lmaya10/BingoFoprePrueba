@@ -10,11 +10,11 @@ const Juego = props => {
 		<div>
 			<div className ="container-fluid contenedor">
 				<div className = "row tableroPrincipal">
-					<Tablero nF={props.numF} nO={props.numO} nP={props.numP} nR={props.numR} nE={props.numE}></Tablero>
+					<Tablero user = {props.user} nF={props.numF} nO={props.numO} nP={props.numP} nR={props.numR} nE={props.numE}></Tablero>
 					
 				</div>
 				<div className ="row">
-					<Carton/>
+					<Carton user = {props.user}/>
 				</div>			
 			</div>
 		</div>
@@ -27,7 +27,8 @@ Juego.propTypes = {
 	numO : PropTypes.arrayOf(PropTypes.object).isRequired,
 	numP : PropTypes.arrayOf(PropTypes.object).isRequired,
 	numR : PropTypes.arrayOf(PropTypes.object).isRequired,
-	numE : PropTypes.arrayOf(PropTypes.object).isRequired
+	numE : PropTypes.arrayOf(PropTypes.object).isRequired,
+	user : PropTypes.object
 
 };
 
