@@ -11,14 +11,14 @@ const NumeroTablero = props => {
 		console.log(props.id);
 		console.log(props.valor);
 		(props.valor < 16) ? 
-			Fs.update({_id: props.id},{numero:props.valor, estado: 1}) :
+			Meteor.call('Fs.update',props.id,props.valor) :
 			(props.valor < 31) ? 
-				Os.update({_id: props.id},{numero:props.valor, estado: 1}) :
+				Meteor.call('Os.update',props.id,props.valor) :
 				(props.valor < 46) ? 
-					Ps.update({_id: props.id},{numero:props.valor, estado: 1}) :
+					Meteor.call('Ps.update',props.id,props.valor) :
 					(props.valor < 61) ? 
-						Rs.update({_id: props.id},{numero:props.valor, estado: 1}) :
-						Es.update({_id: props.id},{numero:props.valor, estado: 1}); 
+						Meteor.call('Rs.update',props.id,props.valor) :
+						Meteor.call('Es.update',props.id,props.valor); 
 	}
 	
 	return (

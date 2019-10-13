@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Encabezado from './Encabezado.jsx'
 import Juego from './Juego.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.js';
@@ -9,69 +9,53 @@ const App = (props) => {
 
 	const [estadoJuego,	 setEstadoJuego] = useState(0);
 
-	const reiniciarTablero = evt =>{
+	useEffect(()=> {
 
-		let lista = Fs.find({});
-		lista.forEach(function(doc){
-  			Fs.remove(doc._id);
-		});
-
-		lista = Os.find({});
-		lista.forEach(function(doc){
-  			Os.remove(doc._id);
-		});
-
-		lista = Ps.find({});
-		lista.forEach(function(doc){
-			Ps.remove(doc._id);
-		});
-		
-		lista = Rs.find({});
-		lista.forEach(function(doc){
-			Rs.remove(doc._id);
-		});
-		
-		lista = Es.find({});
-		lista.forEach(function(doc){
-			Es.remove(doc._id);
-		});
+		Meteor.call('Fs.remove');
+		Meteor.call('Os.remove');
+		Meteor.call('Ps.remove');
+		Meteor.call('Rs.remove');
+		Meteor.call('Es.remove');
 
 		for(let i = 0; i < 15; i++)
 		{
-			Fs.insert({
-				numero: i + 1,
-				estado: 0
-			}); 
-			Os.insert({
-				numero: i + 16,
-				estado: 0
-			}); 
-			Ps.insert({
-				numero: i + 31,
-				estado: 0
-			}); 
-			Rs.insert({
-				numero: i + 46,
-				estado: 0
-			}); 
-			Es.insert({
-				numero: i + 61,
-				estado: 0
-			}); 
+			Meteor.call('Fs.insert',i);
+			Meteor.call('Os.insert',i);
+			Meteor.call('Ps.insert',i);
+			Meteor.call('Rs.insert',i);
+			Meteor.call('Es.insert',i);
 		}
+
+	},[estadoJuego])
+
+	const reiniciarTablero = evt =>{
+		
+		Meteor.call('Fs.remove');
+		Meteor.call('Os.remove');
+		Meteor.call('Ps.remove');
+		Meteor.call('Rs.remove');
+		Meteor.call('Es.remove');
+
+		for(let i = 0; i < 15; i++)
+		{
+			Meteor.call('Fs.insert',i);
+			Meteor.call('Os.insert',i);
+			Meteor.call('Ps.insert',i);
+			Meteor.call('Rs.insert',i);
+			Meteor.call('Es.insert',i);
+		}
+
 	}
 
 	const comenzarEvento = evt => {
 		setEstadoJuego(1);
-		reiniciarTablero();
 	};
 
 
 
 	return (
 		<div>
-			{console.log(props.currentUser)}
-			<AccountsUIWrapper/>
+			<AccountsUIWrapper tabindex = "0"/>
 			<Encabezado/>
 			{ (estadoJuego == 0) ? 		
 			<div>
@@ -104,6 +88,5 @@ export default withTracker(() => {
     numRs: Rs.find({}).fetch(),
     numEs: Es.find({}).fetch(),
     currentUser: Meteor.user(),
-    
   };
 })(App);
