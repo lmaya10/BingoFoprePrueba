@@ -63,6 +63,7 @@ const App = (props) => {
 
 	const comenzarEvento = evt => {
 		setEstadoJuego(1);
+		reiniciarTablero();
 	};
 
 
@@ -76,7 +77,7 @@ const App = (props) => {
 			<div>
 				<h1> Bienvenidos al Bingo Fopre Anual </h1>
 				<div className = "row">
-					<button className = "col-sm-6" onClick = {comenzarEvento}> Comenzar Evento </button>
+					<button className = "col-sm-6"  onClick = {comenzarEvento}> Comenzar Evento </button>
 					<button className = "col-sm-6"> Inscribir Carton </button>
 				</div>
 			</div> 
