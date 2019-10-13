@@ -10,7 +10,7 @@ const Juego = props => {
 		<div>
 			<div className ="container-fluid contenedor">
 				<div className = "row tableroPrincipal">
-					<Tablero user = {props.user} nF={props.numF} nO={props.numO} nP={props.numP} nR={props.numR} nE={props.numE}></Tablero>
+					<Tablero user= {props.user} nF={props.numF} nO={props.numO} nP={props.numP} nR={props.numR} nE={props.numE}></Tablero>
 					
 				</div>
 				<div className ="row">
