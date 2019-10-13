@@ -7,6 +7,33 @@ export const Ps = new Mongo.Collection('numP');
 export const Rs = new Mongo.Collection('numR');
 export const Es = new Mongo.Collection('numE');
 
+if (Meteor.isServer) {
+  // This code only runs on the server
+  Meteor.publish('numF', function numF() {
+    return Fs.find();
+  });
+
+  Meteor.publish('numO', function numO() {
+    return Os.find();
+  });
+
+  Meteor.publish('numP', function numP() {
+    return Ps.find();
+  });
+
+  Meteor.publish('numR', function numR() {
+    return Rs.find();
+  });
+
+  Meteor.publish('numE', function numE() {
+    return Es.find();
+  });
+
+
+}
+ 
+
+
 Meteor.methods({
 	'Fs.insert'(i){
 		if(Meteor.user() != null && Meteor.user().username == "admin")

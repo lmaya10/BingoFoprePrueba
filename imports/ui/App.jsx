@@ -81,6 +81,12 @@ const App = (props) => {
 };
 
 export default withTracker(() => {
+	Meteor.subscribe('numF');
+	Meteor.subscribe('numO');
+	Meteor.subscribe('numP');
+	Meteor.subscribe('numR');
+	Meteor.subscribe('numE');
+
   return {
     numFs: Fs.find({}).fetch(),
     numOs: Os.find({}).fetch(),
