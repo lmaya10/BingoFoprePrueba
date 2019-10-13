@@ -7,11 +7,13 @@
 
     border: 2px solid #000000;
     color: #000000;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     display: inline-block;
     cursor: pointer;
 
-    font: 100% Arial, sans-serif;
+    font: 150% Arial, sans-serif;
 }
 
 .btnApagado{
