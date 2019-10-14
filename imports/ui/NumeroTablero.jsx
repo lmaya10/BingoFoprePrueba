@@ -3,13 +3,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import "./NumeroTablero.css";
 import { Fs, Os, Ps, Rs, Es } from '../api/tablero.js';
+import { Meteor } from 'meteor/meteor';
 
 
 const NumeroTablero = props => {
 
 	const marcarNumero = evt => {
-		console.log(props.id);
-		console.log(props.valor);
 		(props.valor < 16) ? 
 			Meteor.call('Fs.update',props.id,props.valor) :
 			(props.valor < 31) ? 
@@ -22,7 +21,7 @@ const NumeroTablero = props => {
 	}
 	
 	return (
-		(props.user != null && props.user.username == "admin") ? 
+		(Meteor.user() != null && Meteor.user().username == "admin") ? 
 		(<button className ={(props.estado == 1) ? " btnPrendido numberTab" : " btnApagado numberTab"} 	
 			 onClick = {marcarNumero}> {props.valor} </button>) :
 		(<button className ={(props.estado == 1) ? " btnPrendido numberTab" : " btnApagado numberTab"} 	
@@ -34,8 +33,7 @@ const NumeroTablero = props => {
 NumeroTablero.propTypes = {
 	valor : PropTypes.number.isRequired,
 	estado : PropTypes.number.isRequired,
-	id : PropTypes.object.isRequired,
-	user : PropTypes.object
+	id : PropTypes.object.isRequired
 };
 
 export default NumeroTablero;

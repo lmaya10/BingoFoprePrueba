@@ -3,6 +3,7 @@ import Tablero from './Tablero.jsx';
 import Carton from './Carton.jsx';
 import PropTypes from 'prop-types';
 import "./Juego.css";
+import { Meteor } from 'meteor/meteor';
 
 const Juego = props => {
 
@@ -15,30 +16,34 @@ const Juego = props => {
 		let p = [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45];
 		let r = [46,47,48,49,50,51,52,53,54,55,56,57,58,59,60];
 		let e = [61,62,63,64,65,66,67,68,69,70,71,72,73,74,75];
+
+		let num = [];
 	
 		let n;
 		for (n=1; n<=5; ++n)
 		{
 	  		let i = Math.floor((Math.random() * (15-n)) + 1);
-	  		a.push(f[i]);
+	  		num.push(f[i]);
 	  		f[i] = f[15-n];
 
 	  		i = Math.floor((Math.random() * (15-n)) + 1);
-	  		a.push(o[i]);
+	  		num.push(o[i]);
 	  		o[i] = o[15-n];
 
 	  		i = Math.floor((Math.random() * (15-n)) + 1);
-	  		a.push(p[i]);
+	  		num.push(p[i]);
 	  		p[i] = p[15-n];
 
 	  		i = Math.floor((Math.random() * (15-n)) + 1);
-	  		a.push(r[i]);
+	  		num.push(r[i]);
 	  		r[i] = r[15-n];
 
 	  		i = Math.floor((Math.random() * (15-n)) + 1);
-	  		a.push(e[i]);
+	  		num.push(e[i]);
 	  		e[i] = e[15-n];
 		}
+
+		setA(num);
 
 	},[])
 	
@@ -47,11 +52,14 @@ const Juego = props => {
 		<div>
 			<div className ="container-fluid contenedor">
 				<div className = "row tableroPrincipal">
-					<Tablero user= {props.user} nF={props.numF} nO={props.numO} nP={props.numP} nR={props.numR} nE={props.numE}></Tablero>
+					<Tablero nF={props.numF} nO={props.numO} nP={props.numP} nR={props.numR} nE={props.numE}></Tablero>
 					
 				</div>
 				<div className ="row">
-					<Carton numeros = {a} user = {props.user}/>
+					{ (Meteor.user() != null && Meteor.user().username != "admin") ? 
+						<Carton numeros = {a} nF={props.numF} nO={props.numO} nP={props.numP} nR={props.numR} nE={props.numE} /> :
+						((Meteor.user() == null)?( <div> Debe iniciar sesion para poder jugar </div>):<div/>)
+					}
 				</div>			
 			</div>
 		</div>
@@ -65,8 +73,6 @@ Juego.propTypes = {
 	numP : PropTypes.arrayOf(PropTypes.object).isRequired,
 	numR : PropTypes.arrayOf(PropTypes.object).isRequired,
 	numE : PropTypes.arrayOf(PropTypes.object).isRequired,
-	user : PropTypes.object
-
 };
 
 export default Juego;
