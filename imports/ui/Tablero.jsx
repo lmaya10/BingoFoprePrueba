@@ -12,7 +12,7 @@ const Tablero = props => {
 			<h1> Tablero Actual </h1>	
 			<div className = "row">
 				<div className = "col-md-12">		
-					<div className = "tf letterCircle"> F </div>
+					<div className = "tf letterCircle"> F</div>
 					{props.nF.map((n,i) => (
 						<NumeroTablero valor={n.numero} estado={n.estado} id={n._id} key={i}></NumeroTablero>
 						))}
@@ -21,7 +21,7 @@ const Tablero = props => {
 			</div>
 			<div className = "row">
 				<div className = "col-md-12">
-					<div className = "to letterCircle"> O </div>
+					<div className = "to letterCircle"> O</div>
 					{props.nO.map((n,i) => (
 						<NumeroTablero valor={n.numero} estado={n.estado} id={n._id} key={i}></NumeroTablero>
 					))}
@@ -29,7 +29,7 @@ const Tablero = props => {
 			</div>
 			<div className = "row">
 				<div className = "col-md-12">
-					<div className = "tp letterCircle"> P </div>
+					<div className = "tp letterCircle"> P</div>
 					{props.nP.map((n,i) => (
 						<NumeroTablero user= {props.user} valor={n.numero} estado={n.estado} id={n._id} key={i}></NumeroTablero>
 					))}
@@ -37,7 +37,7 @@ const Tablero = props => {
 			</div>
 			<div className = "row">
 				<div className = "col-md-12">
-					<div className = "tr letterCircle"> R </div>
+					<div className = "tr letterCircle"> R</div>
 					{props.nR.map((n,i) => (
 						<NumeroTablero valor={n.numero} estado={n.estado} id={n._id} key={i}></NumeroTablero>
 					))}
@@ -45,7 +45,7 @@ const Tablero = props => {
 			</div>
 			<div className = "row">
 				<div className = "col-md-12">
-					<div className = "te letterCircle"> E </div>
+					<div className = "te letterCircle"> E</div>
 					{props.nE.map((n,i) => (
 						<NumeroTablero valor={n.numero} estado={n.estado} id={n._id} key={i}></NumeroTablero>
 					))}
