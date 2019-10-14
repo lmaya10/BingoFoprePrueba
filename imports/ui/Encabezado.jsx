@@ -6,7 +6,7 @@ const Encabezado = props => {
 	
 	return (
 		<div className = "imgPrincipal"> 	
-			<img className= "imgFopre"src="https://raw.githubusercontent.com/lmaya10/BingoFopre/master/images/Fopre.jpg" alt="Imgen icono fopre"/>
+			<img className= "imgFopre"src="https://raw.githubusercontent.com/lmaya10/BingoFoprePrueba/master/images/FopreBingo.png" alt="Imgen icono fopre"/>
 		</div>
 	)
 };
