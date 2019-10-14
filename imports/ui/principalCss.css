@@ -10,3 +10,9 @@ h1{
 #instrucciones{
 	font-family: 'Archivo Narrow', sans-serif;
 }
+
+#mensajeGanador{
+	text-align: center;
+	font-family: 'Archivo Narrow', sans-serif;
+	font-size: 4rem;
+}

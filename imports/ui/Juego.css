@@ -7,13 +7,7 @@
 	width: 100%;
 }
 
-.mensaje{
-	display: table;
-	text-align: center;
-	justify-content: center;
-}
-
-.mensaje h2{
+h2{
 	display: table-cell;
 	vertical-align: middle;
 	font-family: 'Julius Sans One', sans-serif;

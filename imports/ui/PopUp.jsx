@@ -7,7 +7,7 @@ const PopUp = (props) => {
 		<div className='popup'>  
 			<div className='popup\_inner'>  
 				<h1>{props.text}</h1>  
-				<button onClick={props.closePopup}>close me</button>  
+				<button onClick={props.closePopup}>Cerrar</button>  
 			</div>  
 		</div>  
 	);  

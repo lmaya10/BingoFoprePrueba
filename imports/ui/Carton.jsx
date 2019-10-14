@@ -68,35 +68,38 @@ const Carton = props => {
 
 	return (
 		
-		<div className = "tablero col-md-4 offset-md-4"> 	
-		<h1> Carton Actual </h1>	
+		<div className = "col-md-12">
 			<div className = "row">
-				<div className = "col-md-2 offset-md-1 tf letter"> F </div>
-				<div className = "col-md-2 to letter"> O </div>
-				<div className = "col-md-2 tp letter"> P </div>
-				<div className = "col-md-2 tr letter"> R </div>
-				<div className = "col-md-2 te letter"> E </div>		
-			</div>
-			<br/>
-			<div className = "row">
-				{props.numeros.map((n,i)  => (
-					<NumeroCarton valor={props.numeros[i]} key={i}></NumeroCarton>
-					))
+				<div className = "tablero col-md-4 offset-md-4"> 	
+				<h1> Carton Actual </h1>	
+					<div className = "row">
+						<div className = "col-md-2 offset-md-1 tf letter"> F </div>
+						<div className = "col-md-2 to letter"> O </div>
+						<div className = "col-md-2 tp letter"> P </div>
+						<div className = "col-md-2 tr letter"> R </div>
+						<div className = "col-md-2 te letter"> E </div>		
+					</div>
+					<br/>
+					<div className = "row">
+						{props.numeros.map((n,i)  => (
+							<NumeroCarton valor={props.numeros[i]} key={i}></NumeroCarton>
+							))
+						}
+
+					</div>
+					<br/><br/>
+				</div>
+				<div className = "col-md-4">
+					<button id="btnBingo" className ="col-md-12" onClick ={verificarBingo}>¡BINGO!</button> 
+				</div>
+				{ (mostrarMensaje) ? 
+						<PopUp  
+		          			text= {mensaje}  
+		          			closePopup={togglePopup}  
+						/>:
+						null
 				}
-
 			</div>
-			<br/><br/>
-			<div className = "row">
-				<button id="btnBingo" className ="col-md-12" onClick ={verificarBingo}>¡BINGO!</button> 
-			</div>
-
-			{ (mostrarMensaje) ? 
-				<PopUp  
-          			text= {mensaje}  
-          			closePopup={togglePopup}  
-				/>:
-				null
-			}
 		</div>
 	)
 };

@@ -58,14 +58,17 @@ const App = (props) => {
 
 
 	return (
-		<div>
+		<div className = "container-fluid">
 			<AccountsUIWrapper tabindex = "0"/>
 			<Encabezado/>
 
 			{ ((estadoJuego == 0) ? 		
 			<div className = "texto">
-				<h1> Bienvenidos al Bingo Fopre Anual </h1>
-				<div id="instrucciones">
+				<div className = "row">	
+					<h1 className = "col-md-8 offset-md-2"> Bienvenidos al Bingo Fopre Anual </h1>
+				</div>
+				<div id="instrucciones" className = "row">
+					<div className = "col-md-8 offset-md-2">
 					<p> Instrucciones del juego:  </p>
 					<ol>
 						<li>Para el anfitrion   </li>
@@ -92,17 +95,23 @@ const App = (props) => {
 								<li>Oprima el boton comenzar juego para visualizar el estado del juego actualmente.</li>
 							</ol>
 					</ol>
+					</div>
 				</div>
 				<div className = "row">
-					<button className = "col-sm-6 offset-md-3"  onClick = {comenzarEvento}> Comenzar Evento </button>
+					<button className = "col-md-6 offset-md-3"  onClick = {comenzarEvento}> Comenzar Evento </button>
 				</div>
 			</div> 
 			:
-			((props.ganador > 0) ? (<div> El juego ha terminado, ya hay un ganador </div>):
+			((props.ganador > 0) ? (
+				<div className = "row">
+					<div className = "col-md-6 offset-md-3" id="mensajeGanador"> El juego ha terminado, ya hay un ganador </div>
+				</div>):
 			<div> 
 				<Juego numF = {props.numFs} numO = {props.numOs} numP = {props.numPs} numR = {props.numRs} numE = {props.numEs}></Juego>
 				{ ( Meteor.user() != null && Meteor.user().username == "admin") ?
-					<button onClick = {reiniciarTablero}> Reiniciar Juego </button> :
+					<div className = "row">
+						<button className = "col-md-6 offset-md-3" onClick = {reiniciarTablero}> Reiniciar Juego </button>
+					</div> :
 					<div/>
 				}
 			</div>))
