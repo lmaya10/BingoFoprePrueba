@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import Encabezado from './Encabezado.jsx'
-import Juego from './Juego.jsx';
-import AccountsUIWrapper from './AccountsUIWrapper.js';
-import { Fs, Os, Ps, Rs, Es, revBingo } from '../api/tablero.js';
-import { withTracker } from 'meteor/react-meteor-data';
-import { Meteor } from 'meteor/meteor';
+import React, {useState, useEffect} from "react";
+import Encabezado from "./Encabezado.jsx"
+import Juego from "./Juego.jsx";
+import AccountsUIWrapper from "./AccountsUIWrapper.js";
+import { Fs, Os, Ps, Rs, Es, revBingo } from "../api/tablero.js";
+import { withTracker } from "meteor/react-meteor-data";
+import { Meteor } from "meteor/meteor";
 import "./principalCss.css";
 
 const App = (props) => {
@@ -13,40 +13,40 @@ const App = (props) => {
 
 	useEffect(()=> {
 
-		Meteor.call('Fs.remove');
-		Meteor.call('Os.remove');
-		Meteor.call('Ps.remove');
-		Meteor.call('Rs.remove');
-		Meteor.call('Es.remove');
-		Meteor.call('Bingo.remove');
+		Meteor.call("Fs.remove");
+		Meteor.call("Os.remove");
+		Meteor.call("Ps.remove");
+		Meteor.call("Rs.remove");
+		Meteor.call("Es.remove");
+		Meteor.call("Bingo.remove");
 
 		for(let i = 0; i < 15; i++)
 		{
-			Meteor.call('Fs.insert',i);
-			Meteor.call('Os.insert',i);
-			Meteor.call('Ps.insert',i);
-			Meteor.call('Rs.insert',i);
-			Meteor.call('Es.insert',i);
+			Meteor.call("Fs.insert",i);
+			Meteor.call("Os.insert",i);
+			Meteor.call("Ps.insert",i);
+			Meteor.call("Rs.insert",i);
+			Meteor.call("Es.insert",i);
 		}
 
 	},[estadoJuego])
 
 	const reiniciarTablero = evt =>{
 		
-		Meteor.call('Fs.remove');
-		Meteor.call('Os.remove');
-		Meteor.call('Ps.remove');
-		Meteor.call('Rs.remove');
-		Meteor.call('Es.remove');
-		Meteor.call('Bingo.remove');
+		Meteor.call("Fs.remove");
+		Meteor.call("Os.remove");
+		Meteor.call("Ps.remove");
+		Meteor.call("Rs.remove");
+		Meteor.call("Es.remove");
+		Meteor.call("Bingo.remove");
 
 		for(let i = 0; i < 15; i++)
 		{
-			Meteor.call('Fs.insert',i);
-			Meteor.call('Os.insert',i);
-			Meteor.call('Ps.insert',i);
-			Meteor.call('Rs.insert',i);
-			Meteor.call('Es.insert',i);
+			Meteor.call("Fs.insert",i);
+			Meteor.call("Os.insert",i);
+			Meteor.call("Ps.insert",i);
+			Meteor.call("Rs.insert",i);
+			Meteor.call("Es.insert",i);
 		}
 
 	}
@@ -124,12 +124,12 @@ const App = (props) => {
 
 export default withTracker(() => {
 
-	Meteor.subscribe('numF');
-	Meteor.subscribe('numO');
-	Meteor.subscribe('numP');
-	Meteor.subscribe('numR');
-	Meteor.subscribe('numE');
-	Meteor.subscribe('bingo');
+	Meteor.subscribe("numF");
+	Meteor.subscribe("numO");
+	Meteor.subscribe("numP");
+	Meteor.subscribe("numR");
+	Meteor.subscribe("numE");
+	Meteor.subscribe("bingo");
 	
   return {
     numFs: Fs.find({}).fetch(),

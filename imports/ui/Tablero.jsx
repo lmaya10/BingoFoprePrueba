@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import NumeroTablero from './NumeroTablero.jsx';
+import React from "react";
+import PropTypes from "prop-types";
+import NumeroTablero from "./NumeroTablero.jsx";
 import "./Tablero.css";
-import { Meteor } from 'meteor/meteor';
+import { Meteor } from "meteor/meteor";
 
 
 const Tablero = props => {

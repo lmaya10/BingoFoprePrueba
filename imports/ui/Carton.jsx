@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
-import NumeroCarton from './NumeroCarton.jsx';
-import PopUp from './PopUp.jsx';
+import React, {useState} from "react";
+import PropTypes from "prop-types";
+import NumeroCarton from "./NumeroCarton.jsx";
+import PopUp from "./PopUp.jsx";
 import "./Carton.css";
 
 
@@ -56,7 +56,7 @@ const Carton = props => {
 		}
 
 
-		(correctas == 25) ? ((Meteor.call('Bingo.insert', Meteor.user().username)), setMensaje("Felicidades ha ganado")) : 
+		(correctas == 25) ? ((Meteor.call("Bingo.insert", Meteor.user().username)), setMensaje("Felicidades ha ganado")) : 
 		setMensaje("No ha ganado aun le faltan " + (nocorrectas-350) + " números");
 
 		setMostrarMensaje(true);

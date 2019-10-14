@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import Tablero from './Tablero.jsx';
-import Carton from './Carton.jsx';
-import PropTypes from 'prop-types';
+import React, {useState, useEffect} from "react";
+import Tablero from "./Tablero.jsx";
+import Carton from "./Carton.jsx";
+import PropTypes from "prop-types";
 import "./Juego.css";
-import { Meteor } from 'meteor/meteor';
+import { Meteor } from "meteor/meteor";
 
 const Juego = props => {
 

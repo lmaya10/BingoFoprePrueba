@@ -1,8 +1,8 @@
 
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 import "./NumeroCarton.css";
-import { Fs, Os, Ps, Rs, Es } from '../api/tablero.js';
+import { Fs, Os, Ps, Rs, Es } from "../api/tablero.js";
 
 
 const NumeroCarton = props => {
