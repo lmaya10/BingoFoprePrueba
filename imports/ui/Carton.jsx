@@ -57,7 +57,7 @@ const Carton = props => {
 
 
 		(correctas == 25) ? ((Meteor.call('Bingo.insert', Meteor.user().username)), setMensaje("Felicidades ha ganado")) : 
-		setMensaje("No ha ganado aun le faltan " + (nocorrectas-350));
+		setMensaje("No ha ganado aun le faltan " + (nocorrectas-350) + " números");
 
 		setMostrarMensaje(true);
 	} 
@@ -80,7 +80,7 @@ const Carton = props => {
 						<div className = "col-md-2 te letter"> E </div>		
 					</div>
 					<br/>
-					<div className = "row">
+					<div className = "row numeros">
 						{props.numeros.map((n,i)  => (
 							<NumeroCarton valor={props.numeros[i]} key={i}></NumeroCarton>
 							))
