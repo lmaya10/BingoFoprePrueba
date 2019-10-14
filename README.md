@@ -14,8 +14,7 @@ Se utilizó Meteor, React, Html, Css, Javascript.
 
 ## Screenshot
 
-![Captura](https://user-images.githubusercontent.com/25345623/66730263-217c5b80-ee16-11e9-9051-1c9a195af27c.PNG)
-
+![Captura](https://user-images.githubusercontent.com/25345623/66758662-57483100-ee64-11e9-9864-4f90badd4a1d.PNG)
 
 ## Pre-requisitos
 ```
