@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import NumeroCarton from './NumeroCarton.jsx';
+import PopUp from './PopUp.jsx';
 import "./Carton.css";
 
 
 const Carton = props => {
+
+	const [mensaje, setMensaje] = useState(" ");
+	const [mostrarMensaje, setMostrarMensaje] = useState(false);
 
 	const verificarBingo = evt => {
 		let i = 0;
@@ -52,9 +56,15 @@ const Carton = props => {
 		}
 
 
-		(correctas == 25) ? (Meteor.call('Bingo.insert', Meteor.user().username)) : 
-		console.log("No ha ganado aun le faltan " + ((nocorrectas-350)));
+		(correctas == 25) ? ((Meteor.call('Bingo.insert', Meteor.user().username)), setMensaje("Felicidades ha ganado")) : 
+		setMensaje("No ha ganado aun le faltan " + (nocorrectas-350));
+
+		setMostrarMensaje(true);
 	} 
+
+	const togglePopup = () => {  
+		setMostrarMensaje(!mostrarMensaje);  
+ 	}  
 
 	return (
 		
@@ -79,6 +89,14 @@ const Carton = props => {
 			<div className = "row">
 				<button id="btnBingo" className ="col-md-12" onClick ={verificarBingo}>¡BINGO!</button> 
 			</div>
+
+			{ (mostrarMensaje) ? 
+				<PopUp  
+          			text= {mensaje}  
+          			closePopup={togglePopup}  
+				/>:
+				null
+			}
 		</div>
 	)
 };
