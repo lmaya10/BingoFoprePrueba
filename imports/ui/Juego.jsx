@@ -58,7 +58,7 @@ const Juego = props => {
 				<div className ="row">
 					{ (Meteor.user() != null && Meteor.user().username != "admin") ? 
 						<Carton numeros = {a} nF={props.numF} nO={props.numO} nP={props.numP} nR={props.numR} nE={props.numE} /> :
-						((Meteor.user() == null)?( <div> Debe iniciar sesion para poder jugar </div>):<div/>)
+						((Meteor.user() == null)?( <div className="mensaje"><h2> Debe iniciar sesion para poder jugar </h2></div>):<div/>)
 					}
 				</div>			
 			</div>

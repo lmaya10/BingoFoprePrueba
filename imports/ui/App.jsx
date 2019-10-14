@@ -5,6 +5,7 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
 import { Fs, Os, Ps, Rs, Es, revBingo } from '../api/tablero.js';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
+import "./principalCss.css";
 
 const App = (props) => {
 
@@ -62,34 +63,36 @@ const App = (props) => {
 			<Encabezado/>
 
 			{ ((estadoJuego == 0) ? 		
-			<div>
+			<div className = "texto">
 				<h1> Bienvenidos al Bingo Fopre Anual </h1>
-				<p> Instrucciones del juego:  </p>
-				<ol>
-					<li>Para el anfitrion   </li>
-						<ol>
-							<li>Inicie sesion antes de comenzar </li>
-							<li>Una vez inicie sesion oprima el boton iniciar juego </li>
-							<li>Se abrira una página en la cual se mostrara el tablero </li>
-							<li>A medida que salgan los numeros haga click sobre ellos y se pondran de color rojo </li>
-							<li>Cuando alguien haya completado el bingo se le informará </li>
-							<li>Si desea reiniciar el juego oprima el botón reiniciar juego </li>
-						</ol>
-					<li>Para un jugador	 </li>
-						<ol>
-							<li>Inicie sesion antes de comenzar</li>
-							<li>Una vez inicie sesion oprima el boton iniciar juego </li>
-							<li>Se abrira una página en la cual se mostrara el tablero </li>
-							<li>A medida que salgan los numeros se pondran de color rojo </li>
-							<li>En la parte inferior de la pantalla verá el cartón que le corresponde</li>
-							<li>Haga click sobre los numeros para marcarlos </li>
-							<li>Cuando haya completado el carton oprima el botón ¡BINGO! de igual manera cuando alguien haya completado el bingo se le informará </li>
-						</ol>
-					<li> Para un invitado </li>
-						<ol>
-							<li>Oprima el boton comenzar juego para visualizar el estado del juego actualmente.</li>
-						</ol>
-				</ol>
+				<div id="instrucciones">
+					<p> Instrucciones del juego:  </p>
+					<ol>
+						<li>Para el anfitrion   </li>
+							<ol>
+								<li>Inicie sesion antes de comenzar </li>
+								<li>Una vez inicie sesion oprima el boton iniciar juego </li>
+								<li>Se abrira una página en la cual se mostrara el tablero </li>
+								<li>A medida que salgan los numeros haga click sobre ellos y se pondran de color rojo </li>
+								<li>Cuando alguien haya completado el bingo se le informará </li>
+								<li>Si desea reiniciar el juego oprima el botón reiniciar juego </li>
+							</ol>
+						<li>Para un jugador	 </li>
+							<ol>
+								<li>Inicie sesion antes de comenzar</li>
+								<li>Una vez inicie sesion oprima el boton iniciar juego </li>
+								<li>Se abrira una página en la cual se mostrara el tablero </li>
+								<li>A medida que salgan los numeros se pondran de color rojo </li>
+								<li>En la parte inferior de la pantalla verá el cartón que le corresponde</li>
+								<li>Haga click sobre los numeros para marcarlos </li>
+								<li>Cuando haya completado el carton oprima el botón ¡BINGO! de igual manera cuando alguien haya completado el bingo se le informará </li>
+							</ol>
+						<li> Para un invitado </li>
+							<ol>
+								<li>Oprima el boton comenzar juego para visualizar el estado del juego actualmente.</li>
+							</ol>
+					</ol>
+				</div>
 				<div className = "row">
 					<button className = "col-sm-6 offset-md-3"  onClick = {comenzarEvento}> Comenzar Evento </button>
 				</div>

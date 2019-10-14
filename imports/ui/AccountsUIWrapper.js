@@ -15,6 +15,6 @@ export default class AccountsUIWrapper extends Component {
   }
   render() {
     // Just render a placeholder container that will be filled in
-    return <span tabindex="1" ref="container" />;
+    return <span tabIndex="1" ref="container" />;
   }
 }
