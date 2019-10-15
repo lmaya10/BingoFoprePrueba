@@ -1,0 +1,1 @@
+No se recomiendo descargar y cargar Bootstrap en el repositorio, lleva a una sobrecarga innecesaria para el proyecto.
