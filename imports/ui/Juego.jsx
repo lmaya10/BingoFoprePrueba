@@ -4,6 +4,7 @@ import Carton from "./Carton.jsx";
 import PropTypes from "prop-types";
 import "./Juego.css";
 import { Meteor } from "meteor/meteor";
+// Seria mejor si el tablero puediera tomar varias formas, en vez de estar estatico en el codigo.
 
 const Juego = props => {
 
